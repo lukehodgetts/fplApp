@@ -7,12 +7,13 @@ import Search from "./components/Search";
 import Stat from "./components/Stat";
 
 function App() {
+  const name = "kane";
 
-  const names: string[] = ["steve", "clagnut", "bonk", "jeff"]
+
 
   return (
     <Main>
-      <Search watermark="clagnut steve" />
+      <Search />
     </Main>
   );
 }
