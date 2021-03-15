@@ -6,9 +6,11 @@ import { TextField } from "@material-ui/core";
 import useAxios from "axios-hooks";
 import { useDebouncedCallback } from "use-debounce";
 
-interface Props {}
+interface Props {
+  onSelect: (value?: any) => void;
+}
 
-const Search: React.FC<Props> = () => {
+const Search: React.FC<Props> = ({ onSelect }) => {
   const [search, setSearch] = useState("kane");
 
   const [{ data, loading, error }, execute] = useAxios(
@@ -40,22 +42,22 @@ const Search: React.FC<Props> = () => {
     }
   };
 
-  const names =
-    data?.response.map(
-      ({ player }: any) => `${player.firstname} ${player.lastname}`
-    ) || [];
+  const players = data?.response || [];
 
   return (
-    <Autocomplete
+    <InputBox
       id="SearchBar"
-      options={names}
-      getOptionLabel={(option: string) => option}
-      style={{ width: 300, backgroundColor: "#ffffff" }}
+      loading={loading}
+      options={players}
+      getOptionLabel={({ player, statistics }: any) =>
+        `${player.firstname} ${player.lastname} - ${statistics[0].team.name}`
+      }
       renderInput={(params) => (
-        <TextField {...params} label="Combo box" variant="outlined" />
+        <TextField {...params} label="Search" variant="outlined" />
       )}
       onInputChange={(e, newInputValue) => onInputChange(newInputValue)}
       inputValue={search}
+      onChange={(event, value) => onSelect(value)}
     />
   );
 };

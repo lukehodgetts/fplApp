@@ -1,19 +1,41 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Main = styled.div`
   background-color: #374762;
   height: 100%;
+  padding: 16px;
 `;
 
-export const Header = styled.h1`
-  padding: 20px 10px 20px 10px;
-  margin: 0px 30px 30px 30px;
-  background-color: #f1f1f1;
-  position: absolute;
-  top: 20px;
-  width: 95%;
+export const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  width: 98%;
+  border-radius: 5px;
+  padding: 3px 0px;
 `;
 
-export const Body = styled.div`
-  
+export const StatBody = styled.div`
+  background-color: #ffffff;
+  width: 98%;
+  border-radius: 5px;
+  margin: 10px 0px;
+`;
+
+export const PlayerImage = styled.img`
+  border-radius: 5px;
+`;
+
+export const Flex = styled.div`
+  display: flex;
+`;
+
+export const SectionHeader = styled.h1`
+  color: #ffffff;
+  -webkit-text-stroke: 1px #00000f;
+`;
+
+export const StatHeader = styled.h2`
+  color: #ffffff;
+  -webkit-text-stroke: 1px #00000f;
 `;

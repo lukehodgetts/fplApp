@@ -1,10 +1,16 @@
 import React from 'react'
 
-const Stat = () => {
-  return (
-    <div>
+import {StatBody} from "./index.styles"
 
-    </div>
+interface Props {
+  content: string;
+}
+
+const Stat: React.FC<Props> = ({content}) => {
+  return (
+    <StatBody>
+      {content}
+    </StatBody>
   )
 }
 
