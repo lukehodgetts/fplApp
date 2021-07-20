@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import { Autocomplete } from "@material-ui/lab";
 import { InputBox } from "./index.styles";
 import { TextField } from "@material-ui/core";
 import useAxios from "axios-hooks";
