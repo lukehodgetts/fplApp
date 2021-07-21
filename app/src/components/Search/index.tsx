@@ -21,7 +21,7 @@ const Search: React.FC<Props> = ({ onSelect }) => {
         search: search,
       },
       headers: {
-        "x-rapidapi-key": "6a638ee1bamsh0bb1e79c3766e41p14b198jsn21102f3dc357",
+        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
         "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
       },
     },
